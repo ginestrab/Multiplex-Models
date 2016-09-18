@@ -26,7 +26,9 @@
 % If you use this code please cite 
 %
 % [1] V.Nicosia, G. Bianconi, V. Latora, M. Barthelemy
-% 0
+% Growing multiplex networks
+% Physical Review Letters 111, no. 5 (2013): 058701.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
 function [A] = Growing_Duplex_Linear(N,a,b,m)
 
