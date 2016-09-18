@@ -3,6 +3,7 @@
 This repository contains:
 
 1) Poisson_Multiplex_Model_Multilinks.m 
+
 a matlab code for generating duplex and triplex networks with 
 Poisson multidegree distribution.
 
@@ -13,8 +14,11 @@ Poisson multidegree distribution.
 Statistical mechanics of multiplex networks: Entropy and overlap." 
 
  Physical Review E 87, no. 6 (2013): 062806.
+
+
  
 2) Scalefree_Multiplex_Model_Multilinks.m
+
 a matlab code for generating duplex and triplex networks 
 with scale-free multidegree distribution
 
@@ -27,7 +31,9 @@ If you use this code please cite:
 Physical Review E 87, no. 6 (2013): 062806.
  
 
+
 3) Growing_Duplex_Linear.m
+
 a matlab code for a  growing duplex network with linear kernel
 
 If you use this code please cite:
@@ -38,7 +44,10 @@ If you use this code please cite:
 
  Physical Review Letters 111, no. 5 (2013): 058701.
 
+
+
 4) Growing_Duplex_Nonlinear.m
+
 a matlab code for a growing duplex network with nonlinear kernel
 
 If you use this code please cite:
