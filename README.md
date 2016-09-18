@@ -2,14 +2,16 @@
 
 This repository contains:
 
-1) a matlab code for generating duplex and triplex networks with 
+1) Poisson_Multiplex_Model_Multilinks.m 
+a matlab code for generating duplex and triplex networks with 
 Poisson multidegree distribution.
  If you use this code please cite: 
  [1] G. Bianconi,
 Statistical mechanics of multiplex networks: Entropy and overlap." 
  Physical Review E 87, no. 6 (2013): 062806.
  
-2) a matlab code for generating duplex and triplex networks 
+2) Scalefree_Multiplex_Model_Multilinks.m
+a matlab code for generating duplex and triplex networks 
 with scale-free multidegree distribution
 If you use this code please cite: 
  [1] G. Bianconi,
@@ -17,13 +19,15 @@ If you use this code please cite:
 Physical Review E 87, no. 6 (2013): 062806.
  
 
-3) a matlab code for a  growing duplex network with linear kernel
+3) Growing_Duplex_Linear.m
+a matlab code for a  growing duplex network with linear kernel
 If you use this code please cite:
  [2] Nicosia, G. Bianconi, V. Latora, M. Barthelemy
  Growing multiplex networks
  Physical Review Letters 111, no. 5 (2013): 058701.
 
-4) a matlab code for a growing duplex network with nonlinear kernel
+4) Growing_Duplex_Nonlinear.m
+a matlab code for a growing duplex network with nonlinear kernel
 If you use this code please cite:
 
 [3] Nicosia, G. Bianconi, V. Latora, M. Barthelemy
