@@ -1,12 +1,13 @@
-% %%%%%%%%%%%%%Growing Duplex Model (Linear  Kernel) %%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%Growing Duplex Model (Non-linear  Kernel) %%%%%%%%%%%%%%%%%%%
 % This code generates a  undirected unweighted duplex or triplex network with 
 % Poisson distribution of multilinks
 %
 % INPUTS: 
 %
 % N total number of nodes in the multiplex
-% parameter 0<=a<=1 
-% parameter 0<=b<=1
+% parameter alpha 
+% parameter beta
+% initial number of links m
 % The output is  a cell array A of dimension 2
 % A{1} is the adjacency matrix of the first layer 
 %          
@@ -25,42 +26,53 @@
 % If you use this code please cite 
 %
 % [1] V.Nicosia, G. Bianconi, V. Latora, M. Barthelemy
-% Nicosia, Vincenzo, Ginestra Bianconi, Vito Latora, and Marc Barthelemy.
-%"Growing multiplex networks." 
-% Physical Review Letters 111, no. 5 (2013): 05870
+% 0
 % 
-function [A] = Growing_Duplex_Linear(N,a,b)
+function [A] = Growing_Duplex_Linear(N,a,b,m)
 
 %Initial condition
 A{1}=sparse(N,N);
 A{2}=sparse(N,N);
-A{1}(1,2)=1;
-A{1}(2,1)=1;
+for i=1:m;
+    for j=i+1:m;
+        A{1}(i,j)=1;
+        A{1}(j,i)=1;
+    end
+end
 A{2}=A{1};
 
-for i=3:N,
-    x=rand(1);
-    alpha(1)=1;
-    alpha(2)=2;
-    if x>0.5,
-        alpha(1)=2;
-        alpha(2)=1;
-    end
-
-     
+for i=(m+1):N,
+    Z(1,:)=a*sum(A{1})+(1-a)*sum(A{2});
+    Z(2,:)=b*sum(A{2})+(1-b)*sum(A{1});
     for n=1:2,
-        Z(1,:)=a*sum(A{1})+(1-a)*sum(A{2});
-        Z(2,:)=(1-b)*sum(A{1})+b*sum(A{2});
-        x=sum(Z(alpha(n),:))*rand(1);
-        for ni=1:(i-1),
-            x=x-Z(alpha(n),ni);
-            if(x<0)
-                nx=ni;
-                break;
-            end
-        end
-        A{alpha(n)}(i,nx)=1;
-        A{alpha(n)}(nx,i)=1;
+        occ=zeros(1,N);
+        mx=0;
+        nx=1;
+       while(mx<m), 
+            x=sum(Z(n,:))*rand(1);
+             for ni=1:(i-1),
+                 x=x-Z(n,ni);
+                 if(x<0)
+                     nx=ni;
+                     break;
+                 end
+             end
+         while (occ(nx)==1)    
+             x=sum(Z(n,:))*rand(1);
+             for ni=1:(i-1),
+                 x=x-Z(n,ni);
+                 if(x<0)
+                     nx=ni;
+                     break;
+                 end
+             end
+         end
+         mx=mx+1;
+         occ(nx)=1;
+         A{n}(i,nx)=1;
+         A{n}(nx,i)=1;
+         A{n}(i,i)=0;
+       end
     end
  end
 end
