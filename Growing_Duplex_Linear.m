@@ -1,12 +1,12 @@
-% %%%%%%%%%%%%%Growing Duplex Model (Non-linear  Kernel) %%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%Growing Duplex Model (linear  Kernel) %%%%%%%%%%%%%%%%%%%
 % This code generates a  undirected unweighted duplex or triplex network with 
 % Poisson distribution of multilinks
 %
 % INPUTS: 
 %
 % N total number of nodes in the multiplex
-% parameter alpha 
-% parameter beta
+% parameter 0<=a<=1
+% parameter 0<=b<=1
 % initial number of links m
 % The output is  a cell array A of dimension 2
 % A{1} is the adjacency matrix of the first layer 
