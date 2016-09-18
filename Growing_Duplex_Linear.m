@@ -32,8 +32,8 @@
 function [A] = Growing_Duplex_Linear(N,a,b)
 
 %Initial condition
-A{1}=zeros(N,N);
-A{2}=zeros(N,N);
+A{1}=sparse(N,N);
+A{2}=sparse(N,N);
 A{1}(1,2)=1;
 A{1}(2,1)=1;
 A{2}=A{1};
