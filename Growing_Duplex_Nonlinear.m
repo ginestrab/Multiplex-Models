@@ -27,8 +27,8 @@
 %
 % [1] V.Nicosia, G. Bianconi, V. Latora, M. Barthelemy
 %  "Nonlinear growth and condensation in multiplex networks." 
-% Physical Review E 90, no. 4 (2014): 042807.0
-% 
+% Physical Review E 90, no. 4 (2014): 042807
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [A] = Growing_Duplex_Nonlinear(N,alpha,beta,m)
 
 
