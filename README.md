@@ -48,7 +48,7 @@ If you use this code please cite:
 
  Nicosia, G. Bianconi, V. Latora, M. Barthelemy
  "Nonlinear growth and condensation in multiplex networks." 
- Physical Review E 90, no. 4 (2014): 042807.0
+ Physical Review E 90, no. 4 (2014): 042807
 
 These codes can be redistributed and/or modified
  under the terms of the GNU General Public License as published by
