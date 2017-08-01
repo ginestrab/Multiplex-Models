@@ -36,7 +36,7 @@ function [A] = Growing_Duplex_Linear(N,a,b,m)
 A{1}=sparse(N,N);
 A{2}=sparse(N,N);
 for i=1:m,
-    for j=i+1:m,
+    for j=(i+19:m,
         A{1}(i,j)=1;
         A{1}(j,i)=1;
     end
