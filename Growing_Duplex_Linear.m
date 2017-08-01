@@ -35,8 +35,8 @@ function [A] = Growing_Duplex_Linear(N,a,b,m)
 %Initial condition
 A{1}=sparse(N,N);
 A{2}=sparse(N,N);
-for i=1:m;
-    for j=i+1:m;
+for i=1:m,
+    for j=i+1:m,
         A{1}(i,j)=1;
         A{1}(j,i)=1;
     end
@@ -45,7 +45,7 @@ A{2}=A{1};
 
 for i=(m+1):N,
     Z(1,:)=a*sum(A{1})+(1-a)*sum(A{2});
-    Z(2,:)=b*sum(A{2})+(1-b)*sum(A{1});
+    Z(2,:)=(1-b)*sum(A{2})+(b)*sum(A{1});
     for n=1:2,
         occ=zeros(1,N);
         mx=0;
@@ -56,7 +56,7 @@ for i=(m+1):N,
                  x=x-Z(n,ni);
                  if(x<0)
                      nx=ni;
-                     break;
+                     break
                  end
              end
          while (occ(nx)==1)    
@@ -65,7 +65,7 @@ for i=(m+1):N,
                  x=x-Z(n,ni);
                  if(x<0)
                      nx=ni;
-                     break;
+                     break
                  end
              end
          end
